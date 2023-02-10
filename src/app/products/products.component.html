@@ -1,0 +1,19 @@
+<input type="number" name="price" [(ngModel)]="priceMax">
+<div class="row">
+<div class="col-md-4" *ngFor ="let i of listProduct, let ind=index">
+    <!--<div *ngIf="i.price<priceMax" >-->
+   <!-- <div class="card" style="width: 18rem;">-->
+    <!--<img src="..." class="card-img-top" alt="...">-->
+        <div class="card-body">
+          <h5 class="card-title">Card</h5>
+          <p class="card-text">price : {{i.price}}</p>
+          <p class="card-text">quantity : {{i.quantity}}</p>
+          <p class="card-text">like : {{i.like}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <button class="btn btn-primary" (click)="buyDecrement(ind)" [disabled]="i.quantity<=0">Buy</button>
+          <button class="btn btn-primary" (click)="likeIncrement(ind)">Like </button>
+          <button class="btn btn-primary" [routerLink]="['/products',i.id]" >Détails  </button>
+        </div>
+    </div>
+      <!--</div>-->
+    </div>
